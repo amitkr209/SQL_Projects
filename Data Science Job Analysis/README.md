@@ -1,7 +1,7 @@
 # Introduction
 📊 Dive into the data job market! Focusing on the **Data Analyst** roles, the project explores 💰 top-paying jobs, 🔥 in-demand skills, 📈 and where high demand meets the high salary in data analytics.
 
-🔍 SQL queries? Check them out here: [project_sql folder]([/project_sql/](https://github.com/amitkr209/SQL_Projects/tree/main/Data%20Science%20Job%20Analysis/project_files))
+🔍 SQL queries? Check them out here: [project_sql folder](https://github.com/amitkr209/SQL_Projects/tree/main/Data%20Science%20Job%20Analysis/project_files))
 
 # Background
 Driven by a quest to navigate the data analyst job market more effectively, this project was born from a desire to pinpoint top-paid and in-demand skills, streamlining others work to find optimal jobs.
