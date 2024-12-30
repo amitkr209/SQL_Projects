@@ -1,4 +1,4 @@
-"# Om Bookstore Project Analysis
+# Om Bookstore Project Analysis
 
 ## Overview
 This project was conducted for Om Bookstore, located in Vegas Mall, as a freelance Data Analyst. The initiative focused on building a database, performing SQL-based analysis, and providing actionable recommendations. While a Medium blog inspires the dataset used and is not real, the questions and analytical approach reflect the work done for the bookstore.
@@ -133,7 +133,3 @@ ORDER BY invoice_count DESC;
 
 ## Findings and Conclusions
 This project highlights the power of SQL in deriving valuable insights for business improvement. While the dataset is simulated, the analysis provides a framework for understanding key metrics in bookstore operations.
-
-**Explore the complete code and database on [GitHub](https://github.com/amitkr209/Portfolio_Projects).**
-
-" Convert this in github readme.md code
