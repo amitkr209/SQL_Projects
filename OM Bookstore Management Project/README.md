@@ -111,13 +111,106 @@ SELECT SUM(quantity) AS total_books_sold
 FROM Order_items;
 ```
 
-### 7. Province with most invoices
+### 7. Which Province has the most invoices?
 ```sql
-SELECT c.province, COUNT(o.order_id) AS invoice_count
+SELECT 
+   c.province, COUNT(o.order_id) as invoice_number
 FROM Customers c
 JOIN Orders o ON c.customer_id = o.customer_id
-GROUP BY c.province
-ORDER BY invoice_count DESC;
+JOIN Order_items oi ON o.order_id = oi.order_id
+GROUP BY invoice_number
+ORDER BY 2 DESC;
+```
+### 8. Who is the best customer?
+```sql
+SELECT 
+ o.customer_id, fist_name, last_name,
+    COUNT(oi.quantity) as total_book,
+    SUM(quantity * unit_price) as money_spent
+FROM Customers c
+JOIN Orders o ON c.customer_id = o.customer_id
+JOIN Order_items oi ON o.order_id = oi.order_id
+GROUP BY 1,2,3
+ORDER BY 5 DESC
+LIMIT 3;
+```
+
+### 9. Who is writing Horror books?
+```sql
+SELECT author, book_name
+FROM book_info bi
+JOIN genre g ON bi.genre_id = g.genre_id
+WHERE g.name = "Horror";
+```
+
+### 10. First, find which artist has earned the most according to the InvoiceLines.
+```sql
+WITH tbl_best_selling_author AS(
+    SELECT 
+  author,
+        SUM(oi.unit_price * oi.quantity) AS total_sales
+ FROM book_info bi
+ JOIN Order_items oi ON bi.book_id = oi.product_id
+ GROUP BY author
+ ORDER BY total_sales DESC
+ LIMIT 10
+)SELECT 
+ bsa.author,
+    SUM(oi.unit_price * oi.quantity) AS amount_spent, 
+    c.customer_id, c.fist_name, c.last_name
+FROM Customers c
+JOIN Orders o ON c.customer_id = o.customer_id
+JOIN Order_items oi ON o.order_id = oi.order_id
+JOIN book_info bi ON oi.product_id = bi.book_id
+JOIN tbl_best_selling_author bsa ON bi.author = bsa.author
+GROUP BY bsa.author,
+         c.customer_id,
+         c.first_name,
+         c.last_name
+ORDER BY amount_spent DESC;
+```
+
+### 11. We want to find out the most popular book Genre for each Province.
+```sql
+WITH RECURSIVE
+    tbl_sales_per_province AS(
+  SELECT COUNT(*) AS purchases_per_genre, province, g.name as genre, g.genre_id
+  FROM Customers c
+  JOIN Orders o ON c.customer_id = o.customer_id
+  JOIN Order_items oi ON o.order_id = oi.order_id
+  JOIN book_info bi ON oi.product_id = bi.book_id
+  JOIN genre g ON bi.genre_id = g.genre_id
+  GROUP BY 2,3,4
+  ORDER BY 1 DESC
+ )
+ ,tbl_max_genre_per_province AS(SELECT MAX(purchases_per_genre) AS max_genre_number, province
+  FROM tbl_sales_per_province
+  GROUP BY 2
+  ORDER BY 2)SELECT tbl_sales_per_province.* 
+FROM tbl_sales_per_province
+JOIN tbl_max_genre_per_province ON tbl_sales_per_province.province = tbl_max_genre_per_province.province
+WHERE tbl_sales_per_province.purchases_per_genre = tbl_max_genre_per_province.max_genre_number;
+```
+
+### 12. Write a query that determines the customer that has spent the most on books for each province.
+```sql
+WITH RECURSIVE 
+   tbl_customer_with_province AS (
+     SELECT c.customer_id, fist_name, last_name, province,SUM(oi.quantity*oi.unit_price) AS total_spending
+     FROM Order_items oi
+     JOIN Orders o ON oi.order_id = o.order_id
+     JOIN Customers c ON c.customer_id = o.customer_id
+     GROUP BY 1,2,3,4
+     ORDER BY 2,3 DESC),   tbl_province_max_spending AS(
+     SELECT province, MAX(total_spending) AS max_spending
+     FROM tbl_customer_with_province
+     GROUP BY 1)SELECT 
+    tbl_cp.province, tbl_cp.customer_id, tbl_cp.fist_name, tbl_cp.last_name, tbl_cp.total_spending
+FROM tbl_customer_with_province tbl_cp
+JOIN tbl_province_max_spending tbl_ms
+   ON tbl_cp.province = tbl_ms.province
+WHERE tbl_cp.total_spending = tbl_ms.max_spending
+ORDER BY 1;
 ```
 
 ---
