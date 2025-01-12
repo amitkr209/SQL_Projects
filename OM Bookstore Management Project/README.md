@@ -1,14 +1,15 @@
 # Om Bookstore Project Analysis
 
 ## Overview
-This project was conducted for Om Bookstore, located in Vegas Mall, as a freelance Data Analyst. The initiative focused on building a database, performing SQL-based analysis, and providing actionable recommendations. While a Medium blog inspires the dataset used and is not real, the questions and analytical approach reflect the work done for the bookstore.
+This project was conducted as a freelance data analyst for Om Bookstore, located in Vegas Mall. The initiative focused on building a database, performing SQL-based analysis, and providing actionable recommendations. While a Medium blog inspired the dataset used and is not real, the questions and analytical approach reflect the work done for the bookstore.
 
 ---
 
-Blog: Explaining the Process
+## Blog
+Explaining the Process
 In my blog, I delve deeper into the process and methodology behind this case study. I discuss the significance of each step, from data cleaning to generating insights. This includes a breakdown of challenges encountered during analysis, the rationale behind chosen techniques, and reflections on the outcomes. The blog is an educational resource for anyone interested in SQL and data analytics.
 
-Explore the complete blog and database on [Medium](https://medium.com/@olly3301/data-analysis-with-sql-online-bookstore-management-project-ab6a887aa43f).
+Explore the blog and database on [Medium](https://medium.com/@olly3301/data-analysis-with-sql-online-bookstore-management-project-ab6a887aa43f).
 
 ---
 
