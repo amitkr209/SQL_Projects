@@ -1,4 +1,3 @@
-
 // Student Management System (MongoDB)
 
 // Create a Collection
