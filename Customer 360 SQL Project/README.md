@@ -10,7 +10,7 @@ Analysis of customer behavior, retention, and lifetime value for an e-commerce c
 
 ## Clean Up Data
 
-**🖥️ Query**: [0_create_view.sql](/00%20Cohort%20Analysis%20View%20Optimization.sql)
+**🖥️ Query**: [0_create_view.sql](https://github.com/amitkr209/SQL_Projects/blob/main/Customer%20360%20SQL%20Project/00%20Cohort%20Analysis%20View%20Optimization.sql)
 
 - Aggregated sales and customer data into revenue metrics
 - Calculated first purchase dates for cohort analysis
@@ -20,7 +20,7 @@ Analysis of customer behavior, retention, and lifetime value for an e-commerce c
 
 ### 1. Customer Segmentation
 
-**🖥️ Query**: [1_customer_segmentation.sql](/01%20-%20Customer%20Segmentation.sql)
+**🖥️ Query**: [1_customer_segmentation.sql](https://github.com/amitkr209/SQL_Projects/blob/main/Customer%20360%20SQL%20Project/01%20-%20Customer%20Segmentation.sql)
 
 - Categorized customers based on total lifetime value (LTV)
 - Assigned customers to High, Mid, and Low-value segments
@@ -28,7 +28,7 @@ Analysis of customer behavior, retention, and lifetime value for an e-commerce c
 
 **📈 Visualization:**
 
-![Customer Segmentation](/images/01_customer_segementation.png)
+<img src="https://github.com/amitkr209/SQL_Projects/blob/main/Customer%20360%20SQL%20Project/Images/01_customer_segementation.png" alt="Customer Segmentation" style="width: 50%; height: auto;">
 
 📊 **Key Findings:**
 - High-value segment (25% of customers) drives 66% of revenue ($135.4M)
@@ -41,9 +41,9 @@ Analysis of customer behavior, retention, and lifetime value for an e-commerce c
 - Low-Value (2% revenue): Design re-engagement campaigns and price-sensitive promotions to increase purchase frequency
 
 ### 2. Customer Revenue by Cohort
-**🖥️ Query**: [2_cohort_analysis.sql](/02%20-%20Cohort%20Analysis.sql)
+**🖥️ Query**: [2_cohort_analysis.sql](https://github.com/amitkr209/SQL_Projects/blob/main/Customer%20360%20SQL%20Project/02%20-%20Cohort%20Analysis.sql)
 
-- Tracked revenue and customer count per cohorts
+- Tracked revenue and customer count per cohort
 - Cohorts were grouped by year of first purchase
 - Analyzed customer revenue at a cohort level
 
@@ -51,24 +51,24 @@ Analysis of customer behavior, retention, and lifetime value for an e-commerce c
 
 Customer Revenue by Cohort (Adjusted for time in market) - First Purchase Date 
 
-![Cohort Analysis](/images/2_cohort_analysis.png)
+<img src="https://github.com/amitkr209/SQL_Projects/blob/main/Customer%20360%20SQL%20Project/Images/02.2_cohort_analysis.png" alt="Customer Revenue Normalized" style="width: 50%; height: auto;">
 
 Investigate Monthly Revenue & Customer Trends (3 Month Rolling Average)
 
-![Cohort Analysis](/images/2.1_cohort_analysis.png)
+<img src="https://github.com/amitkr209/SQL_Projects/blob/main/Customer%20360%20SQL%20Project/Images/02.1_cohort_analysis.png" alt="Monthly Revenue & CustomerTrends" style="width: 50%; height: auto;">
 
 📊 **Key Findings:**  
-- Customer revenue is declining, older cohorts (2016-2018) spent ~$2,800+, while 2024 cohort spending dropped to ~$1,970.  
+- Customer revenue is declining; older cohorts (2016-2018) spent approximately $2,800+, while the 2024 cohort spent dropped to approximately $1,970.  
 - Revenue and customers peaked in 2022-2023, but both are now trending downward in 2024.  
 - High volatility in revenue and customer count, with sharp drops in 2020 and 2024, signaling retention challenges.  
 
 💡 **Business Insights:**  
 - Boost retention & re-engagement by targeting recent cohorts (2022-2024) with personalized offers to prevent churn.  
-- Stabilize revenue fluctuations and introduce loyalty programs or subscriptions to ensure consistent spending.  
+Stabilize revenue fluctuations by introducing loyalty programs or subscriptions to ensure consistent spending.  
 - Investigate cohort differences by applying successful strategies from high-spending cohorts (2016-2018) to newer ones.
 
 ### 3. Customer Retention
-🖥️ Query: [3_retention_analysis.sql](/03%20-%20Customer%20Retention.sql)
+🖥️ Query: [3_retention_analysis.sql](https://github.com/amitkr209/SQL_Projects/blob/main/Customer%20360%20SQL%20Project/03%20-%20Customer%20Retention.sql)
 
 - Identified customers at risk of churning
 - Analyzed last purchase patterns
@@ -77,10 +77,12 @@ Investigate Monthly Revenue & Customer Trends (3 Month Rolling Average)
 **📈 Visualization:**
 
 Churned Customer Count
-![](/Images/03.1_customer_churn.png)
+
+<img src="https://github.com/amitkr209/SQL_Projects/blob/main/Customer%20360%20SQL%20Project/Images/03.1_customer_churn.png" alt="Customer Churn" style="width: 50%; height: auto;">
 
 Customer Churn by Cohort Year
-![](/Images/03.2_customer_churn_cohort_year.png)
+
+<img src="https://github.com/amitkr209/SQL_Projects/blob/main/Customer%20360%20SQL%20Project/Images/03.2_customer_churn_cohort_year.png" alt="Customer Churn by Cohort Year" style="width: 50%; height: auto;">
 
 📊 **Key Findings:**  
 - Cohort churn stabilizes at ~90% after 2-3 years, indicating a predictable long-term retention pattern.  
